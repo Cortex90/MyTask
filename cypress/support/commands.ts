@@ -36,23 +36,3 @@
 
 // Cypress Command to decrypt the password
 /// <reference types="cypress" />
-
-// Add a Cypress command to decrypt the password
-Cypress.Commands.add('decryptPassword', () => {
-    // Get the encrypted password from Cypress environment variables
-    const encryptedPassword = Cypress.env('ENCRYPTED_PASSWORD');
-
-    if (!encryptedPassword) {
-        throw new Error('ENCRYPTED_PASSWORD not found in the environment variable');
-    }
-
-    // Base64 decode the password using `atob` and return it as a Cypress-wrapped value
-    const decryptedPassword = atob(encryptedPassword);  // Decodes the Base64 string
-
-    return cy.wrap(decryptedPassword);  // Wrap the decrypted value to return it in the Cypress command chain
-});
-
-
-
-
-
