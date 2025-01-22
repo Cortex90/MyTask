@@ -7,6 +7,9 @@ cd your-project
 # Install dependencies
 npm install
 
+# Add the cypress env variables to the root
+file: cypress.env.json
+
 # Run Cypress in Interactive Mode (UI)
 npm run cy:open
 
